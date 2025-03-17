@@ -19,6 +19,16 @@ class Solution{
      */
 
     static String toCamelCase(String s){
-        return "";
+        StringBuilder resultado = new StringBuilder(s);
+        for (int i = 0; i < resultado.length(); i++){
+            if (resultado.charAt(i) == '-' || resultado.charAt(i) == '_'){
+                resultado.setCharAt(i + 1, Character.toUpperCase(resultado.charAt(i + 1)));
+                resultado.deleteCharAt(i);
+
+            }
+
+        }
+
+        return resultado.toString();
     }
 }
